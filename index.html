@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cardápio Online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Delícias do Max</h1>
+    <input type="search" id="search" placeholder="🔍 Buscar no cardápio..." />
+  </header>
+
+  <nav id="category-menu"></nav>
+
+  <main id="products-container"></main>
+
+  <footer>
+    <button id="open-cart">🛒 Carrinho (<span id="cart-count">0</span>)</button>
+  </footer>
+
+  <!-- Modal Carrinho -->
+  <section id="cart-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Seu Carrinho</h2>
+      <div id="cart-items"></div>
+      <p id="cart-total">Total: R$ 0,00</p>
+
+      <form id="checkout-form">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="text" name="endereco" placeholder="Endereço de entrega" required />
+        <select name="pagamento" required>
+          <option value="">Forma de pagamento</option>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="PIX">PIX</option>
+          <option value="Cartão">Cartão</option>
+        </select>
+        <button type="submit">Finalizar Pedido via WhatsApp</button>
+      </form>
+
+      <button id="close-cart">Fechar</button>
+    </div>
+  </section>
+
+  <script type="module" src="supabase/supabase.js"></script>
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>

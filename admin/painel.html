@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Admin - Cardápio</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header>
+    <h1>Painel Administrativo</h1>
+    <button id="logout">Sair</button>
+  </header>
+
+  <section class="formulario-produto">
+    <h2>Cadastrar Novo Produto</h2>
+    <form id="form-produto">
+      <input type="text" name="nome" placeholder="Nome" required />
+      <input type="text" name="descricao" placeholder="Descrição" required />
+      <input type="number" name="preco" step="0.01" placeholder="Preço" required />
+      <input type="text" name="categoria" placeholder="Categoria" required />
+      <input type="file" name="imagem" accept="image/*" required />
+      <button type="submit">Salvar Produto</button>
+    </form>
+  </section>
+
+  <section id="lista-produtos">
+    <h2>Produtos Cadastrados</h2>
+    <input type="search" id="filtro-produto" placeholder="Buscar produto..." />
+    <div id="produtos-container"></div>
+  </section>
+
+  <script type="module" src="../supabase/supabase.js"></script>
+  <script type="module" src="painel.js"></script>
+</body>
+</html>
